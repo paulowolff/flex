@@ -1,17 +1,37 @@
 main {
-    padding: 20px;
-    width: 600px;
-    background-color: gray;
+    width: 80%;
+    background-color: #CCC;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4,100px);
+    grid-template-areas: "a a b c",
+                         "a a d e",
+                        "f g d h"
+    
+    
+}
+
+main > div:first-child{
+    background-color: tomato;
+    grid-area:"a";
+}
+
+main > div:nth-child(7){
+    background-color: yellowgreen;
+}
+
+main > div:nth-child(5) {
+    background-color: turquoise;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
 
 main > div {
-    height: 100px;
-    width: 100px;
+ 
     background-color: yellow;
     border: 1px solid black;
     
